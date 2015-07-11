@@ -27,3 +27,9 @@
 + git reset --hard id 恢复整个工作区为某个ID commit下的版本
 + git reset -head~<num>	向前恢复num个版本
 + git reset --hard -head^ 向前恢复一个版本
+
++ git reflog 查看git日志的详细版本
+
++ git branch <filename> 创建分支
++ git checkout <branchname> 切换分支
++ git checkout -b <barnchname> 创建并切换到相应的分支
