@@ -33,3 +33,4 @@
 + git branch <filename> 创建分支
 + git checkout <branchname> 切换分支
 + git checkout -b <barnchname> 创建并切换到相应的分支
+f
