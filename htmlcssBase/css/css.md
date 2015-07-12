@@ -1,0 +1,16 @@
+#CSS样式表知识点#
+
++ 引入时 <link href="style.css" rel="stylesheet"/>
+
+##CSS常用属性##
++ width/height 长宽
++ background 可以指定颜色。
+++ 背景属于复合属性，可以有多个属性。可以写在一行，可以分为多行来写。尽量使用复合属性来写。
++++ eg. background:blue no-repeat fixed center top 
+	background-attachment background-image background-color
+++ url()可以指定背景图片
+ 
++++ no-repeat(不重复) 
++++ repeat-x repeat-y repeat
++++ 10px 50px 控制背景图片的位置，x轴，y轴的位置。 可以给予百分数。 可以直接使用left center right。
++++ fixed/scroll 图片固定，不会随着滚动条的移动而移动
