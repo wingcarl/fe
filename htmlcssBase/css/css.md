@@ -1,6 +1,6 @@
 #CSS样式表知识点  
 
-+ 引入时使用	·<link href="style.css" rel="stylesheet"/>·  
++ 引入时使用	···<link href="style.css" rel="stylesheet"/>···  
 
 ##CSS常用属性    
 + width/height 长宽  
