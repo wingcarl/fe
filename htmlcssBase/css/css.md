@@ -1,8 +1,8 @@
-#CSS样式表知识点#  
+#CSS样式表知识点  
 
-+ 引入时使用	<link href="style.css" rel="stylesheet"/>  
++ 引入时使用	·<link href="style.css" rel="stylesheet"/>·  
 
-##CSS常用属性##  
+##CSS常用属性    
 + width/height 长宽  
 + background 可以指定颜色。  
 	+ 背景属于复合属性，可以有多个属性。可以写在一行，可以分为多行来写。尽量使用复合属性来写。    
