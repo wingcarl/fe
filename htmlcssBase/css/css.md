@@ -1,17 +1,25 @@
-#CSSÑùÊ½±íÖªÊ¶µã#
+#CSSæ ·å¼è¡¨çŸ¥è¯†ç‚¹#  
 
-+ ÒıÈëÊ± Ê¹ÓÃlink href="style.css" rel="stylesheet"
++ å¼•å…¥æ—¶ä½¿ç”¨	<link href="style.css" rel="stylesheet"/>  
 
-##CSS³£ÓÃÊôĞÔ##
-+ width/height ³¤¿í
-+ background ¿ÉÒÔÖ¸¶¨ÑÕÉ«¡£
-±³¾°ÊôÓÚ¸´ºÏÊôĞÔ£¬¿ÉÒÔÓĞ¶à¸öÊôĞÔ¡£¿ÉÒÔĞ´ÔÚÒ»ĞĞ£¬¿ÉÒÔ·ÖÎª¶àĞĞÀ´Ğ´¡£¾¡Á¿Ê¹ÓÃ¸´ºÏÊôĞÔÀ´Ğ´¡£
-eg. background:blue no-repeat fixed center top 
-	background-attachment background-image background-color
-url()¿ÉÒÔÖ¸¶¨±³¾°Í¼Æ¬
-no-repeat(²»ÖØ¸´) 
-repeat-x repeat-y repeat
-10px 50px ¿ØÖÆ±³¾°Í¼Æ¬µÄÎ»ÖÃ£¬xÖá£¬yÖáµÄÎ»ÖÃ¡£ ¿ÉÒÔ¸øÓè°Ù·ÖÊı¡£ ¿ÉÒÔÖ±½ÓÊ¹ÓÃleft center right¡£
-fixed/scroll Í¼Æ¬¹Ì¶¨£¬²»»áËæ×Å¹ö¶¯ÌõµÄÒÆ¶¯¶øÒÆ¶¯
-+ border ±ß¿òÑùÊ½
-10px solid gray
+##CSSå¸¸ç”¨å±æ€§##  
++ width/height é•¿å®½  
++ background å¯ä»¥æŒ‡å®šé¢œè‰²ã€‚  
+	+ èƒŒæ™¯å±äºå¤åˆå±æ€§ï¼Œå¯ä»¥æœ‰å¤šä¸ªå±æ€§ã€‚å¯ä»¥å†™åœ¨ä¸€è¡Œï¼Œå¯ä»¥åˆ†ä¸ºå¤šè¡Œæ¥å†™ã€‚å°½é‡ä½¿ç”¨å¤åˆå±æ€§æ¥å†™ã€‚    
+	+ eg. background:blue no-repeat fixed center top   
+	+ background-attachment background-image background-color  
+	+ url()å¯ä»¥æŒ‡å®šèƒŒæ™¯å›¾ç‰‡  
+		+ no-repeat(ä¸é‡å¤)  
+		+ repeat-x repeat-y repeat  
+		+ 10px 50px æ§åˆ¶èƒŒæ™¯å›¾ç‰‡çš„ä½ç½®ï¼Œxè½´ï¼Œyè½´çš„ä½ç½®ã€‚ å¯ä»¥ç»™äºˆç™¾åˆ†æ•°ã€‚ å¯ä»¥ç›´æ¥ä½¿ç”¨left center rightã€‚  
+		+ fixed/scroll å›¾ç‰‡å›ºå®šï¼Œä¸ä¼šéšç€æ»šåŠ¨æ¡çš„ç§»åŠ¨è€Œç§»åŠ¨  
++ border è¾¹æ¡†æ ·å¼  
+	+ 10px solid gray  
++ padding å†…è¾¹è·  
+	+ ç›’å­é‡Œé¢çš„å†…å®¹è·ç¦»ç›’å­è¾¹çš„è·ç¦»  
+	+ padding-top etc.  
+	+ **ç›’å­çš„width/heightä¸åŒ…æ‹¬paddingçš„è·ç¦»**  
++ margin å¤–è¾¹è·  
+	+ margin-bottom margin-topã€‚**ä¸¤ä¸ªç›’å­ä¹‹é—´çš„ä¸Šä¸‹å¤–è¾¹è·ä¼šå åŠ **  
+	+ ä¸¤ä¸ªç›’å­ç›¸äº’åŒ…å«ã€‚**é‡Œé¢çš„å¤–è¾¹è·ä¼šä¼ é€’ç»™çˆ¶çº§**  
+	+ margin-left:auto margin-right:auto;ä¼šè‡ªåŠ¨å±…ä¸­ã€‚  
