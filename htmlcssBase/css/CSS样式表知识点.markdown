@@ -61,7 +61,7 @@
   + text-indent *使用em作为单位会以文字作为单位*  
   + font-weight bold normal
   + font-style italic normal  斜体
-  + text-decoration underline overline line-throught 上划线、下划线、删除线
-  + letter-spacing 控制字间距
+  + text-decoration underline overline line-throught 上划线、下划线、删除线  
+  + letter-spacing 控制字间距  
 ## CSS盒模型  
 + 页面中盒子的大小等于border+padding+width/height
