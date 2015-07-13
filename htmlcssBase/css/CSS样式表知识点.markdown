@@ -53,14 +53,15 @@
 
 	+ margin-left:auto margin-right:auto;会自动居中。  
 + 文本字体
-  + font-size 文字大小(*最小的是12px，保证文字大小都是偶数*） 
-  + font-family 文字字体(*可以直接写中文*），可以加多个字体  
-  + font-color blue/red/... rgb(165,56,59) 十六进制色彩值#a3c3aa  
-  + line-height 行高 **如果要使文字上下居中，则把line-height 设为盒子的width  
-  + text-align 文本的水平对齐方式 left center right  
-  + text-indent *使用em作为单位会以文字作为单位*   
-  + font-style italic normal  斜体  
-  + text-decoration underline overline line-throught 上划线、下划线、删除线  
-  + letter-spacing 控制字间距  
+  + font-size 文字大小(*最小的是12px，保证文字大小都是偶数*）
+  + font-family 文字字体(*可以直接写中文*），可以加多个字体
+  + font-color blue/red/... rgb(165,56,59) 十六进制色彩值#a3c3aa
+  + line-height 行高 **如果要使文字上下居中，则把line-height 设为盒子的width
+  + text-align 文本的水平对齐方式 left center right
+  + text-indent *使用em作为单位会以文字作为单位*  
+  + font-weight bold normal
+  + font-style italic normal  斜体
+  + text-decoration underline overline line-throught 上划线、下划线、删除线
+  + letter-spacing 控制字间距
 ## CSS盒模型  
-+ 页面中盒子的大小等于border+padding+width/height  
++ 页面中盒子的大小等于border+padding+width/height
