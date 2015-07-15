@@ -66,7 +66,7 @@
 ##CSS盒模型  
 + 页面中盒子的大小等于border+padding+width/height  
 
-##CSS实战
+##CSS实战  
 + 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
 ```
 <style>
