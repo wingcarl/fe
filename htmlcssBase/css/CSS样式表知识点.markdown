@@ -62,6 +62,15 @@
   + font-weight bold normal
   + font-style italic normal  斜体
   + text-decoration underline overline line-throught 上划线、下划线、删除线  
-  + letter-spacing 控制字间距  
-## CSS盒模型  
-+ 页面中盒子的大小等于border+padding+width/height
+  + letter-spacing/word-spacing 控制字间距/字母间距  
+##CSS盒模型  
++ 页面中盒子的大小等于border+padding+width/height  
+
+##CSS实战
++ 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
+```
+<style>
+*{padding:0;margin:0;}
+li{list-style:none}
+</style>
+```
