@@ -1,3 +1,13 @@
 /* css Carl Wang QQ-*/
-body{margin:0;padding:0};
-li{list-style:none}
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select { padding:0; margin:0; font-family:arial; }
+li { list-style:none; }
+img { border:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+body{background: #fff url(../images/body_bg.png) repeat-x;}
+
+#top {width:960px;height:30px;margin:0 auto;}
+.top_menu {float:left;}
+.top_menu li { float:left; background:url(../images/top_ico.png) no-repeat right 14px; font-size:13px; line-height:30px; padding-right:18px; margin-right:15px; }
+.top_menu a { color:#c0c0c0; }
+.top_menu a:hover { color:#fff; }
