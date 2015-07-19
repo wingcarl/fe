@@ -32,3 +32,17 @@ body{background: #fff url(../images/body_bg.png) repeat-x;}
 .search{position:absolute;width:292px;height:32px;background:url(../images/search.png) no-repeat;}
 .search .text{background:none;border:none;width:230px;height:30px;line-height:30px;font-size:13px; color:#666; outline:none; position:absolute;top:0;left:20px;}
 .search .btn{background:none;border:none;position:absolute; top:0; right:0; width:42px; height:30px;}
+
+#nav{width:960px;height:36px;margin:0 auto;padding-top:8px ;}
+#nav li{float:left;height:28px;margin-right:2px;}
+#nav a{float:left;height:28px;text-decoration:none;color:#fff;font-size:15px;font-family:Arial;line-height:28px}/*垂直居中，把line-height设置为box的高度*/
+#nav strong{float:left;height:28px;font-weight:normal;}
+#nav span{float:left;height:28px;padding:0 16px;}
+
+#nav a:hover,#nav .active a{background:url(../images/nav_active_bg.png) repeat-x 0 -56px;}/*垂直居中，把line-height设置为box的高度*/
+#nav  a:hover strong,#nav .active strong{background:url(../images/nav_active_bg.png) no-repeat;}
+#nav a:hover span,#nav .active span{background:url(../images/nav_active_bg.png) no-repeat right -28px;}
+
+#content { width:1000px; margin:24px auto 20px; background:url(../images/content_bg.gif) repeat-y -1000px 0; }
+#content_top { width:1000px; background:url(../images/content_bg.gif) no-repeat; }
+#content_bottom { width:1000px; background:url(../images/content_bg.gif) no-repeat -2000px bottom; padding-top:10px; }
