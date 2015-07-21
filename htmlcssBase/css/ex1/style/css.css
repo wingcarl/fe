@@ -70,3 +70,12 @@ body{background: #fff url(../images/body_bg.png) repeat-x;}
 .list ul{background:url(../images/list_bg.gif) no-repeat -210px bottom;padding:18px 8px 15px;}
 .list a{display:block;height:27px;line-height:27px;border-bottom:1px solid #fff;padding-left:32px;color:#434343; text-decoration:none; font-weight:bold; font-size:12px;}
 .list a:hover { color:#b20e00; border-bottom:1px solid #b20e00; background:#fae191; text-decoration:none; }
+
+.module_join{margin-top:12px;width:210px;background:url(../images/list_bg.gif) repeat-y -630px 0;}
+.module_join_t{background:url(../images/list_bg.gif) no-repeat -420px 0;}
+.module_join_b{background:url(../images/list_bg.gif) no-repeat -840px bottom;}
+
+.join_form{width:180px;margin:0 auto  12px;}
+.join_form p{font-size:15px;font-family:Arial;color:#666666;line-height:18px;padding:12px 0;}
+.join_form .text{height:25px;line-height:25px;width:175px;margin-bottom:6px;background:#fff; border:1px solid #fff; border-top:1px solid #9c9c9c; border-left:1px solid #c0c0c0; outline:none;}
+.join_form .btn { width:88px; height:25px; border:none; font-size:15px; color:#fff; font-weight:bold; background:url(../images/shopping_bg.png) no-repeat 0 -145px; margin:0 auto; display:block; }
