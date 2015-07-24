@@ -49,8 +49,7 @@ body{background: #fff url(../images/body_bg.png) repeat-x;}
 #content { width:1000px; margin:24px auto 20px; background:url(../images/content_bg.gif) repeat-y -1000px 0; }
 #content_top { width:1000px; background:url(../images/content_bg.gif) no-repeat; }
 #content_bottom { width:1000px; background:url(../images/content_bg.gif) no-repeat -2000px bottom; padding-top:10px; }
-<<<<<<< HEAD
-=======
+
 
 #ad {width:940px; height:300px; position:relative;margin:0 auto;}
 #ad p,#ad h2,#ad ul{position:absolute;z-index:1;}
@@ -89,4 +88,4 @@ body{background: #fff url(../images/body_bg.png) repeat-x;}
 .space1 { height:45px; line-height:45px; }
 .space2 { height:38px; padding-top:5px; line-height:18px; }
 .space3 { height:45px; padding-top:5px; line-height:18px; }
->>>>>>> origin/master
+
