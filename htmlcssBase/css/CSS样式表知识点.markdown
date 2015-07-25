@@ -66,6 +66,16 @@
 ##CSS盒模型  
 + 页面中盒子的大小等于border+padding+width/height  
 
+##Position定位  
++ 分为绝对定位、相对定位和fixed三种  
++ 绝对定位  
+> 元素将脱离流而独立存在，使用top,left来定位时的参照物为最近的postion为relative的元素。  
+> 使用margin来定位时，参照物是自己在流中原来的位置。  
++ 相对定位  
+> 元素不会脱离流而存在，参照物是自己在流中原来的位置。  
++ FIXED  
+> 用于浏览器滚屏时，依然固定在原来的位置，其他和绝对定位类似。  
+
 ##CSS实战  
 + 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
 ```
