@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>js-0</title>
+		<style>
+			span {font-weight:bold;}
+			#show_block{border:1px solid #1f1f1f;width:250px;height:250px;background:yellow;display:none;}
+		</style>
+		<script>
+			window.onload = function(){
+				var showBtn = document.getElementById('show');
+				var hideBtn = document.getElementById('hide');
+				var showSpan = document.getElementById('show_span');
+				var myDiv = document.getElementById('show_block');
+				showBtn.onclick = show;
+				hideBtn.onclick = hide;
+				showSpan.onclick = show;
+				function show(){
+					myDiv.style.display = 'block';
+				}
+				function hide(){
+					myDiv.style.display = 'none';
+				}
+				
+				
+				
+			}
+		</script>
+		</head>
+	<body>
+		<input type="button" id="show" value="显示"/>
+		<input type="button" id="hide" value="隐藏"/>
+		<span id="show_span">我也要让它显示~~</span>
+		<div id="show_block">
+		</div>
+	</body>
+</html>
