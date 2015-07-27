@@ -4,40 +4,144 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>js-0</title>
 		<style>
-			body{background:#6f6f6e;}
-			#control_box{width:242px;height:162px;background:#8d8d8c;margin:0 auto;margin-top:200px;padding:16px;}
+			//body{background:#6f6f6e;}
+			#control_box{width:242px;height:162px;background:#8d8d8c;margin:0 auto;margin-top:200px;padding:16px;display:none;}
 			#control_panel{width:242px;height:162px;background:#fff;}
 			ul{margin:0;padding:0;height:26px;}
-			li{list-style:none;padding-right:5px;}
+			li{list-style:none;padding:20px;}
 			span{display:block;float:left;}
-			#red{float:left;width:30px;height:26px;background:#8aaf00;}
-			#yellow{float:left;width:30px;height:26px;background:#fdbb00;}
-			#blue{float:left;width:30px;height:26px;background:#538ff5;}
-			
+			#red{background:#8aaf00;}
+			#yellow{background:#fdbb00;}
+			#blue{background:#538ff5;}
+			.sel{margin-right:2px;float:left;width:30px;height:26px;background:#eee;cursor:pointer;}
+			#red span,#yellow span,#blue span{padding:5px 8px;color:#fff;}
+			.num{padding:3px 3px;color:#6f6f6e;}
+			#my_button{clear:both; margin:0 auto; width:100px;padding-top:8px;}
+			.origin_show_box_style{border:4px solid #000;background:#fff;width:100px;height:100px;margin-top:15px;}
 		</style>
 		<script>
 			window.onload = function(){
-			
-				
-				
+				var setting_btn = document.getElementById('setting');
+				setting_btn.onclick = showControlPanel;
+				var control_box = document.getElementById('control_box');
+				var main_body = document.getElementsByTagName('body')[0];
+				var restore_btn = document.getElementById('restore');
+				var show_box = document.getElementById('show_box');
+				var red_btn = document.getElementById('red');
+				var yellow_btn = document.getElementById('yellow');
+				var blue_btn = document.getElementById('blue');
+				var resize_btn = getByClass(control_box,'num');
+				var submit_btn = document.getElementById('submit');
+				red_btn.onclick = function(){
+					changeBackground('red');
+				}
+				yellow_btn.onclick = function(){
+					changeBackground('yellow');
+				}
+				blue_btn.onclick = function(){
+					changeBackground('blue');
+				}
+				function showControlPanel(){
+					control_box.style.display='block';
+					main_body.style.background = '#6f6f6e';
+					setting_btn.disabled=true;
+				}
+				restore_btn.onclick = restore;
+				function restore(){
+					control_box.style.display='none';
+					setting_btn.disabled=false;
+					main_body.style.background = '#fff';
+					show_box.className = 'origin_show_box_style';
+					changeSize(100,0);
+					changeSize(100,1);
+					changeBackground('#fff');
+				}
+				function changeBackground(color){
+					show_box.style.background=color;
+				}
+				for (var i=0;i<resize_btn.length;i++){
+							resize_btn[i].i=i;
+					resize_btn[i].onclick = function(){
+							var size = this.innerText;
+							var widthOrHeight;
+							if(this.i<3) 
+								widthOrHeight = 0;
+							else 
+								widthOrHeight = 1;
+							changeSize(size,widthOrHeight)
+					}
+				}
+				submit_btn.onclick = submit;
+				function submit(){
+					control_box.style.display='none';
+					setting_btn.disabled=false;
+					main_body.style.background = '#fff';
+					
+				}
+				/**
+					@innerText 改变的大小的长度
+					@WidthOrHeight 改变高还是改变宽的标识符，0--改变宽 1--改变高
+				**/
+				function changeSize(innerText,widthOrHeight){
+					if(widthOrHeight == 0){
+						show_box.style.width = innerText+'px';
+					}else if(widthOrHeight == 1) {
+						show_box.style.height = innerText+'px';
+					}
+				}
+				function getByClass(oParent, sClass)
+				{
+						var aEle=oParent.getElementsByTagName('*');
+						var aResult=[];
+						var re=new RegExp('\\b'+sClass+'\\b', 'i');
+						var i=0;
+						
+						for(i=0;i<aEle.length;i++)
+						{
+								if(re.test(aEle[i].className))
+								{
+										aResult.push(aEle[i]);
+								}
+						}
+						
+						return aResult;
+				}
 				
 			}
 		</script>
 		</head>
 	<body>
-		
-		<div id="control_box">
+		<div id="main_area">
+			<strong>请为下面的DIV设置样式：</strong><input id="setting" type="button" value="点击设置"/>
+			<div id="show_box" class="origin_show_box_style">
+			</div>
+		</div>
+		<div id="control_box" >
 			<div id="control_panel">
 				<ul>
 					<li>
 						<span>请选择背景色:</span>
-						<div id="red"><span>红</span> </div>
-						<div id="yellow">黄</div>
-						<div id="blue">蓝</div>
+						<div class="sel" id="red"><span>红</span> </div>
+						<div class="sel" id="yellow"><span>黄</span></div>
+						<div class="sel" id="blue"><span>蓝</span></div>
 					</li>
-					<li></li>
-					<li></li>
+					<li>
+						<span>请选择宽(px):</span>
+						<div class="sel resize" ><span class="num">200</span> </div>
+						<div class="sel resize" ><span class="num">300</span></div>
+						<div class="sel resize" ><span class="num">400</span></div>
+					</li>
+					<li>
+						<span>请选择高(px):</span>
+						<div class="sel resize" ><span class="num">200</span> </div>
+						<div class="sel resize" ><span class="num">300</span></div>
+						<div class="sel resize" ><span class="num">400</span></div>
+					</li>
 				</ul>
+				<div id="my_button"> 
+				<input type="button" id="restore" value="恢复"/>
+				<input type="button" id="submit" value="确定"/>
+				</div>
 			</div>
 		</div>
 	</body>
