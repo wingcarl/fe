@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>js-1</title>
+		<style>
+			body{text-align:center;}
+			#control_box{width:288px;height:593px;margin:50px auto 0;position:relative;}
+			#text_box{width:242px;height:426px;border:#000 solid 3px;position:absolute;left:22px;top:82px;}
+			#texter{width:242px;height:50px;border-top:#c0c0c0 solid 1px;position:absolute;left:25px;top:458px;}
+			#face{width:32px;height:38px;float:left;background:url(img/faceBackground.png);margin-top:8px;margin-left:5px;}
+			#faceimg{width:24px;height:24px;padding:5px 3px;margin:0;}
+			#write_text{float:left;width:140px;height:34px;margin:0;margin-top:8px;margin-left:4px;padding:0;border:#ded6e7 solid 1px;}
+			#btn{float:left;width:48px;height:34px;margin-top:8px;margin-left:4px;background:#fff;border:none;font-weight:bold;font-size:14px;cursor:pointer;}
+			#show_text_box{width:236px;height:370px;position:absolute;left:3px;}
+			.right{width:auto;height:auto;float:right;background:#21c618;color:#fff;}
+			.textFace{float:right;}
+			.left{width:auto;height:auto;float:left;background:#1882c6;color:#fff;}
+			.textLeftFace{float:left;}
+			.clear{clear:both;}
+		</style>
+		<script>
+			window.onload = function(){
+				var oFace = document.getElementById('face');
+				var faceImg = document.getElementById('faceimg');
+				var submitBtn = document.getElementById('btn');
+				var showBox = document.getElementById('show_text_box');
+				var onOff = true;
+				oFace.onclick = function(){
+					changeFace();
+				}
+				submitBtn.onclick = function(){
+					addText();
+				}
+				function changeFace(){
+					if(onOff){
+						faceImg.src = 'img/2.png';
+						onOff = false;
+					}else {
+						faceImg.src = 'img/1.png';
+						onOff = true;
+					}
+				}
+				function addText(){
+					var oText = document.getElementById('write_text'); 
+					if(onOff){
+						var addText = '<img class="textFace" src="img/1.png" /><div class="right">'+oText.value+'</div> <div class="clear"/>';
+						
+					}else{
+						var addText = '<img class="textLeftFace" src="img/2.png" /><div class="left">'+oText.value+'</div> <div class="clear"/>';
+					}
+					showBox.innerHTML += addText;
+				}
+			}
+		</script>
+		</head>
+	<body>
+	
+	<div id="control_box">
+		<img src="img/iPhone.gif" />
+		<div id="text_box">
+			<div id="show_text_box">
+			</div>
+		</div>
+		<div id="texter">
+			<div id="face" >
+				<img id="faceimg" src="img/1.png"/>
+			</div>
+			
+			<input type="text" id="write_text" />
+
+			<input type="button" id="btn" value="发送"/>
+		</div>
+	</div>
+	</body>
+</html>
