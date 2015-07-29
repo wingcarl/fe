@@ -12,10 +12,10 @@
 			#faceimg{width:24px;height:24px;padding:5px 3px;margin:0;}
 			#write_text{float:left;width:140px;height:34px;margin:0;margin-top:8px;margin-left:4px;padding:0;border:#ded6e7 solid 1px;}
 			#btn{float:left;width:48px;height:34px;margin-top:8px;margin-left:4px;background:#fff;border:none;font-weight:bold;font-size:14px;cursor:pointer;}
-			#show_text_box{width:236px;height:370px;position:absolute;left:3px;}
-			.right{width:auto;height:auto;float:right;background:#21c618;color:#fff;}
+			#show_text_box{width:236px;height:370px;position:absolute;left:3px;overflow:auto;}
+			.right{max-width:180px;width:auto;text-align:left;font-weight:bold;height:auto;float:right;background:#21c618;color:#fff;margin-top:5px;}
 			.textFace{float:right;}
-			.left{width:auto;height:auto;float:left;background:#1882c6;color:#fff;}
+			.left{width:auto;max-width:180px;height:auto;text-align:left;font-weight:bold;float:left;background:#1882c6;color:#fff;margin-top:5px;}
 			.textLeftFace{float:left;}
 			.clear{clear:both;}
 		</style>
@@ -49,7 +49,7 @@
 					}else{
 						var addText = '<img class="textLeftFace" src="img/2.png" /><div class="left">'+oText.value+'</div> <div class="clear"/>';
 					}
-					showBox.innerHTML += addText;
+					showBox.innerHTML = (addText+showBox.innerHTML);
 				}
 			}
 		</script>
