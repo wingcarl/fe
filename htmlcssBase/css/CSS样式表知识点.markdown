@@ -1,5 +1,4 @@
-#CSS样式表知识点  
-
+﻿#CSS样式表知识点  
 
 
 
@@ -65,18 +64,40 @@
   + letter-spacing/word-spacing 控制字间距/字母间距  
 ##CSS盒模型  
 + 页面中盒子的大小等于border+padding+width/height  
-
-##Position定位  
-+ 分为绝对定位、相对定位和fixed三种  
-+ 绝对定位  
-> 元素将脱离流而独立存在，使用top,left来定位时的参照物为最近的postion为relative的元素。  
-> 使用margin来定位时，参照物是自己在流中原来的位置。  
-+ 相对定位  
-> 元素不会脱离流而存在，参照物是自己在流中原来的位置。  
-+ FIXED  
-> 用于浏览器滚屏时，依然固定在原来的位置，其他和绝对定位类似。  
-
-##CSS实战  
+##常用标签
++ a标签可以作为链接，锚点(#+id)，下载的作用。
++ 标题标签 ```<h1><h2><h3>```
++ 段落标签 ```<p>```
++ 语气加强 ```<strong>  <em>```
++ 区分样式 ```<span>```
+##样式的覆盖顺序
++ 同级样式默认后者覆盖前者。多级覆盖后级，class高于普通选择符
++ ```普通标签选择符<class<id<style行间样式<JS修改```
+##默认样式重置
+```
+<style>
+body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0;font-size:12px;}
+ol,ul{list-style:none;padding:0;margin:0;}
+a{text-decoration:none;}
+img{border:none;}
+</style>
+```
+##内联/块
++ 内联，内嵌，行内：
+    + 后面可以接着跟同类型的元素
+    + 内容撑开宽度
+    + 内嵌不支持宽高
+    + 不支持上下的内外边距
+    + 代码换行被解析
++ 块：
+    + 独占一行
+    + 没有宽度时，默认占满一行的宽度
+    + 支持所有的CSS命令
++ inline-block
+    + 内联和块的结合体
+    + 代码换行被解析
+    + IE6 IE7不支持inline-block
+##CSS实战
 + 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
 ```
 <style>
