@@ -62,18 +62,23 @@
   + font-style italic normal  斜体
   + text-decoration underline overline line-throught 上划线、下划线、删除线  
   + letter-spacing/word-spacing 控制字间距/字母间距  
+
 ##CSS盒模型  
+
 + 页面中盒子的大小等于border+padding+width/height  
-##常用标签
+
+##常用标签  
 + a标签可以作为链接，锚点(#+id)，下载的作用。
 + 标题标签 ```<h1><h2><h3>```
 + 段落标签 ```<p>```
 + 语气加强 ```<strong>  <em>```
 + 区分样式 ```<span>```
-##样式的覆盖顺序
+
+##样式的覆盖顺序  
 + 同级样式默认后者覆盖前者。多级覆盖后级，class高于普通选择符
 + ```普通标签选择符<class<id<style行间样式<JS修改```
-##默认样式重置
+
+##默认样式重置  
 ```
 <style>
 body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0;font-size:12px;}
@@ -82,7 +87,7 @@ a{text-decoration:none;}
 img{border:none;}
 </style>
 ```
-##内联/块
+##内联/块  
 + 内联，内嵌，行内：
     + 后面可以接着跟同类型的元素
     + 内容撑开宽度
@@ -109,7 +114,7 @@ img{border:none;}
 + overflow:auto 溢出显示滚动条
 + overflow:scroll 不管是否溢出都显示滚动条
 + overflow:hidden 溢出隐藏
-##CSS实战
+##CSS实战  
 + 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
 ```
 <style>
