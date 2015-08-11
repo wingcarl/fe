@@ -101,7 +101,7 @@ img{border:none;}
 + inline-block
     + 内联和块的结合体
     + 代码换行被解析
-    + IE6 IE7不支持inline-block
+    + IE6 IE7不支持inline-block  
 ##清浮动  
 + 给父级加浮动
 + 给父级加inline-block
@@ -109,11 +109,11 @@ img{border:none;}
 + ```<br clear="all"/>```
 +  给父级元素加上zoom:1
         加上after伪类 .clear:after{content:"";clear:both;display:block;}
-+ overflow:hidden 或者 overflow:auto
++ overflow:hidden 或者 overflow:auto  
 ##overflow  
 + overflow:auto 溢出显示滚动条
 + overflow:scroll 不管是否溢出都显示滚动条
-+ overflow:hidden 溢出隐藏
++ overflow:hidden 溢出隐藏  
 ##CSS实战  
 + 有时候要去掉默认的内容,**样式重置**。eg.body的margin=0。ul el list-style=none。
 ```
