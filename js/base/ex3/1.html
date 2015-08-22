@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul,h2{margin:0;padding:0;}
+		li{list-style: none;}
+		#list{margin:0 auto;border:1px solid #333;width:240px;}
+		#list h2 { height:30px; line-height:30px; text-indent:20px; background:url(img/ico1.gif) no-repeat 5px center #6FF; color:#000; }
+		#list .active { background:url(img/ico2.gif) no-repeat 5px center #FF9; color:#000; }
+		#list ul { display:none; }
+		#list ul li { line-height:24px; border-bottom:1px solid #333; text-indent:24px; }
+		#list ul .hover { background:#6FF; }
+	</style>
+	<script>
+		window.onload = function(){
+			var oUl = document.getElementById("list");
+			var aH2 = oUl.getElementsByTagName("h2");
+			var aUl = oUl.getElementsByTagName("ul");
+			var aLi = null;
+			var arrLi = [];
+			for(var i=0;i<aH2.length;i++){
+				aH2[i].index = i;
+				aH2[i].onclick = function(){
+					for(var i=0;i<aH2.length;i++){
+						if(i!=aH2[i].index){
+							aUl[i].style.display = 'none';
+							aH2[i].className = '';
+						}
+					}
+					if(this.className == ''){
+						aUl[this.index].style.display = 'block';
+						this.className = 'active';
+					}else{
+						aUl[this.index].style.display = 'none';
+						this.className = '';
+					}
+				}
+			}
+		}
+		
+	</script
+</head>
+<body>
+	<ul id="list">
+		<li class="lis">
+			<h2>我的好友</h2>
+			<ul>
+				<li>张 1</li>
+				<li>张 2</li>
+				<li>张 3</li>
+				<li>张 4</li>
+			</ul>
+		</li>
+		<li class="lis">
+			<h2>企业好友</h2>
+			<ul>
+				<li>张 1</li>
+				<li>张 2</li>
+				<li>张 3</li>
+				<li>张 4</li>
+			</ul>
+		</li>
+		<li class="lis">
+			<h2>黑名单</h2>
+			<ul>
+				<li>张 1</li>
+				<li>张 2</li>
+				<li>张 3</li>
+				<li>张 4</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
