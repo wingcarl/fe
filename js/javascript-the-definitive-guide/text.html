@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title> 主标题 | 副标题</title>
-<script src="Set.js"></script> 
+<script src="enumeration.js"></script> 
 <script>
 	window.onload = function(){
-		var a = new Set(23,56);
-		a.add(12,32);
-		alert(a.n);
-		alert(a.values);
+		var deck = (new Deck()).shuffle();
+		var hand = deck.deal(13).sort(Card.orderBySuit);
+		for(var i=0;i<hand.length;i++){
+			console.log(hand[i].toString());
+		}
 	}
 	
 </script>
