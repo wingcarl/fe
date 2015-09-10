@@ -66,3 +66,34 @@ Set._v2s = function(val){
 };
 
 Set._v2s.next = 100;
+
+extend(Set.prototype,{
+	toString:function(){
+		var s = "{";
+		i = 0;
+		this.foreach(function(v){s += ((i++ > 0)?",":"")+ v;});
+		return s + "}";
+	},
+	toLocaleString:function(){
+		var s = "{",i=0;
+		this.foreach(function(v){
+			if(i++>0) s+=", ";
+			if(v == null) s+=v;
+			else s += v.toLocaleString();
+		});
+		return s+"}";
+	},
+	toArray:function(){
+		var a = [];
+		this.foreach(function(v){a.push(v);});
+		return a;
+	}
+});
+
+Set.prototype.toJSON = Set.prototype.toArray;
+function extend(o,p){
+	for(prop in p){
+		o[prop] = p[prop];
+	}
+	return o;
+}
