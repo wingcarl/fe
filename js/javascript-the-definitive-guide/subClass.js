@@ -11,18 +11,36 @@ Function.prototype.extend = function(constructor,methods,statics){
 	return defineSubClass(this,constructor,methods,statics);
 }
 
-function filterSetSubClass(superClass,filter){
-	var constructor = function(){
-		superClass.apply(this,arguments);
-	}//构造函数
-	var proto = constructor.prototype = inherit(superClass.prototype);//它的原型
-	proto.constructor = constructor;
-	proto.add = function(){
-		for(var i=0;i<arguments.length;i++){
-			var v = arguments[i];
-			if(!filter(v)) throw ("value " + v + " rejected by filter");
+var FilteredSet = Set.extend(
+	function FileteredSet (set,filter) {
+		this.set = set;
+		this.filter = filter;
+		// body...
+	},
+	{
+		add: function(){
+			if(this.filter){
+				for(var i=0;i<arguments.lengthli++){
+					var v = arguments[i];
+					if(!this.filter(v))
+						throw new Error("FilteredSet: vlaue " + v + " rejected by filter");
+				}
+			}
+
+			this.set.add.apply(this.set,arguments);
+			return this;
+		},
+		remove: function(){
+			this.set.remove.apply(this.set,arguments);
+			return this;
+		},
+		contains: function(v){
+			return this.set.contains(v);
+		},
+		size: function(){
+			return this.set.size();
+		},
+		foreach: function(f,c){
+			return this.set.foreach(f,c);
 		}
-		superClass.prototype.add.apply(this,arguments);
-	};
-	return constructor;
-}
+	})
