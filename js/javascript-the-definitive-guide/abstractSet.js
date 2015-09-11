@@ -80,8 +80,7 @@ var SingletonSet = AbstractEnumerableSet.extend(
 		contains:function(x){return x === this.member;},
 		size:function(){return 1;},
 		foreach:function(f,ctx){f.call(ctx,this.member);}
-	}
-);
+	});
 
 var AbstractWritableSet = AbstractWritableSet.extend(
 	function(){throw new Error("can't instantiate abstract classes");},
@@ -130,5 +129,3 @@ var ArraySet = AbstractWritableSet.extend(
 		}
 	}
 	)
-
-)
