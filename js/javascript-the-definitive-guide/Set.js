@@ -97,3 +97,60 @@ function extend(o,p){
 	}
 	return o;
 }
+function inherit(p){
+	if(p == null) throw TypeError();
+	if(Object.create)
+		return Object.create(p);
+	var t = typeof p;
+	if(t !== "object" && t !== "function") throw TypeError();
+	function f(){};
+	f.prototype = p;
+	return new f();
+}
+function SingletonSet(member){
+	this.member = member;
+}
+
+SingletonSet.prototype = inherit(Set.prototype);
+
+extend(SingletonSet.prototype,{
+	constructor:SingletonSet,
+	add:function(){throw "read-only set";},
+	remove:function(){throw "read-only set";},
+	size:function(){return 1;},
+	foreach:function(f,context){f.call(context,this.member);},
+	contains:function(x){return x === this.member;}
+
+});
+
+SingletonSet.prototype.equals = function(that){
+	return that instanceof Set && that.size()==1 && that.contains(this.member);
+};
+
+function NotNullSet(){
+	Set.apply(this,arguments);
+}
+NotNullSet.prototype = inherit(Set.prototype);
+NotNullSet.prototype.constructor = NotNullSet;
+NotNullSet.prototype.add = function(){
+	for(var i=0; i < arguments.length; i++)
+		if(arguments[i] == null)
+			throw new Error("Cant't add null or undefined to a NotNullSet");
+	return Set.prototype.add.apply(this,arguments);
+}
+
+function filterSetSubClass(superclass,filter){
+	var constructor = function(){
+		superclass.apply(this,arguments);
+	}//构造函数
+	var proto = constructor.prototype = inherit(superclass.prototype);//它的原型
+	proto.constructor = constructor;
+	proto.add = function(){
+		for(var i=0;i<arguments.length;i++){
+			var v = arguments[i];
+			if(!filter(v)) throw ("value " + v + " rejected by filter");
+		}
+		superclass.prototype.add.apply(this,arguments);
+	};
+	return constructor;
+}

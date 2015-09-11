@@ -8,17 +8,20 @@
 
 <script>
 	window.onload = function(){
-		var deck = (new Deck()).shuffle();
+		/*var deck = (new Deck()).shuffle();
 		var hand = deck.deal(13).sort(Card.orderBySuit);
 		for(var i=0;i<hand.length;i++){
 			console.log(hand[i].toString());
-		}
+		}*/
 		var set = new Set(1,3,4,5,6);
 		set.add({a:3});
 		set.add(function(){alert('hello!')});
 		set.add('adfd');
 		set.add(new Date());
 		console.log(set.toArray());
+		var StringSet = filterSetSubClass(Set,function(x){return typeof x === "string";});
+		var sSet = new StringSet("3");
+		console.log(sSet.toString());
 	}
 	
 </script>
