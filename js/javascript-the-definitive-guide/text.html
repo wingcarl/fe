@@ -5,7 +5,7 @@
 <title> 主标题 | 副标题</title>
 <script src="enumeration.js"></script> 
 <script src="Set.js"></script> 
-
+<script src="invoke.js"></script>
 <script>
 	window.onload = function(){
 		/*var deck = (new Deck()).shuffle();
@@ -22,6 +22,10 @@
 		var StringSet = filterSetSubClass(Set,function(x){return typeof x === "string";});
 		var sSet = new StringSet("3");
 		console.log(sSet.toString());
+		var f = function(){
+			alert(new Date())
+		} 
+		//invoke(f,2000,2000,20000);
 	}
 	
 </script>
