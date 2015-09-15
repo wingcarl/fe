@@ -49,3 +49,86 @@ function textContent(e){
 	}
 	return s;
 }
+
+function reverse(n){
+	//创建一个DocumentFragment作为临时容器
+	var f = document.createDocumentFragment(); 
+	//给documentFragment添加节点时，该节点自动会从n中删除
+	while(n.lastChild) f.appendChild(n.lastChild);
+	n.appendChild(f);
+}
+
+(function(){
+	if(document.createElement("div").outerHTML) return;
+
+	function outerHTMLGetter(){
+		var container = document.createElement("div");
+		container.appendChild(this.cloneNode(true));
+		return container.innerHTML;
+	}
+
+	function outerHTMLSetter(value){
+		var container = documetn.createElement("div");
+		container.innerHTML = value;
+		while(container.firstChild)
+			this.parentNode.inserBefore(container.firstChild,this);
+		this.parentNode.removeChild(this);
+	}
+
+	if(Object.defineProperty){
+		Object.defineProperty(Element.prototype,"outerHTML",{
+			get : outerHTMLGetter,
+			set : outerHTMLSetter,
+			enumerable: false,
+			configurable: true
+		});
+	}
+	else{
+		Element.prototype.__defineGetter__("outerHTML",outerHTMLGetter);
+		Element.prototype.__defineSetter__("outerHTML",outerHTMLSetter);
+	}
+})
+
+var Insert = (function()}{
+	if(document.createElement("div").inserAdjacentHTML){
+		return{
+			before : function(e,h){e.inserAdjacentHTML("beforebegin",h);},
+			after : function(e,h){e.inserAdjacentHTML("afterend",h);},
+			atStart : function(e,h){e.inserAdjacentHTML("afterbegin",h);},
+			atEnd : function(e,h){e.inserAdjacentHTML("beforeend",h);}
+		};
+	}
+	function fragment(html){
+		var elt = document.createElement("div");
+		var frag = document.createDocumentFragment();
+		elt.innerHTML = html;
+		while(elt.firstChild)
+			frag.appendChild(elt.firstChild);
+		return frag;
+	}
+
+	var Insert = {
+		before : function(elt,html){
+			elt.parentNode.insertBefore(fragment(html),elt);
+		},
+		after : function(elt,html){
+			elt.parentNode.insertBefore(fragment(html),elt.nextSibling);
+		},
+		atStart : function(elt,html){
+			elt.parentNode.insertBefore(fargment(html),elt.firstChild);
+		},
+		atEnd: function(elt,html){
+			elt.appendChild(fragment(html));
+		}
+	};
+
+	Element.prototype.inserAdjacentHTML = function(pos,html){
+		switch(pos.toLowerCase()){
+			case "beforebegin": return Insert.before(this,html);
+			case "afterend": return Insert.after(this,html);
+			case "afterbegin": return Insert.atStart(this,html);
+			case "beforeend": return Insert.atEnd(this,html);
+		}
+	};
+	return Insert;
+}());
