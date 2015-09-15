@@ -9,8 +9,14 @@
 			elt.innerHTML = now.toLocaleTimeString();
 			setTimeout(displayTime,1000);
 		}
-		window.onload = displayTime;
+		window.onload = function(){
+			var body = document.getElementsByTagName("body")[0];
+			var a = textContent(body);
+			console.log(textContent(body));
+
+		};
 	</script>
+	<script src="selector.js"></script>
 	<style>
 		#clock{
 			font:bold 24pt sans;
@@ -23,6 +29,6 @@
 </head>
 <body>
 		<h1>Digital Clock</h1>
-		<span id="clock"></span>
+		<span id="clock">aaaa</span>
 </body>
 </html>
