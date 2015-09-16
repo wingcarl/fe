@@ -29,3 +29,11 @@ function getViewportSize(w){
 		return {w:d.documentElement.clientWidth,h:w.documentElement.clientHeight};
 	return {w:d.body.clientWidth,h:d.body.clientHeight};
 }
+
+function getSelectedText(){
+	if(window.getSelection)
+		return window.getSelection().toString();
+	else if(document.selection){
+		return document.selection.createRange().text;
+	}
+}

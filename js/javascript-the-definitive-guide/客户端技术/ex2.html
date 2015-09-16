@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Digital Clock</title>
+	
+	<script src="tools.js"></script>
+	<script>
+		window.onload = function(){
+			var sp = document.getElementsByTagName("span")[0];
+			var s1 = getScrollOffsets();
+			var s2 = getViewportSize();
+			var rect = document.getElementById("rect");
+			var s3 = rect.getBoundingClientRect();
+			setTimeout(function(){
+				var s4 = getSelectedText();
+				alert(s4);
+			},4000);
+
+			
+		}
+		
+	</script>
+	<style>
+		#rect{width:400px;height:400px;margin:0 auto;border:1px solid #000;}
+		#editor{width:400px;height:400px;margin:0 auto;border:1px solid #000;}
+	</style>
+</head>
+<body>
+		<div id="rect">34645675473657546376576456</div>
+		<a href="javascript: var q;
+			if(window.getSelection) q = window.getSelection().toString();
+			else if(document.selection) q = document.selection.createRange().text;
+			void window.open('http://en.wikipedia.org/wiki/'+q);">
+				Look Up Selected Text In Wikipedia
+			</a>
+		<div id="editor" contenteditable>
+				Click to edit
+		</div>
+</body>
+</html>
