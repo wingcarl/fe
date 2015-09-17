@@ -4,9 +4,11 @@
 	<title>Digital Clock</title>
 	
 	<script src="tools.js"></script>
+	<script src="shake.js"></script>
+
 	<script>
 		window.onload = function(){
-			var sp = document.getElementsByTagName("span")[0];
+		/*	var sp = document.getElementsByTagName("span")[0];
 			var s1 = getScrollOffsets();
 			var s2 = getViewportSize();
 			var rect = document.getElementById("rect");
@@ -16,12 +18,13 @@
 				alert(s4);
 			},4000);
 
-			
+			var s5 = document.getElementById("editor");*/
+			fadeOut("rect",null,5000); 
 		}
 		
 	</script>
 	<style>
-		#rect{width:400px;height:400px;margin:0 auto;border:1px solid #000;}
+		#rect{width:400px;height:400px;margin:0 auto;border:1px solid #000;background: red}
 		#editor{width:400px;height:400px;margin:0 auto;border:1px solid #000;}
 	</style>
 </head>
@@ -33,7 +36,7 @@
 			void window.open('http://en.wikipedia.org/wiki/'+q);">
 				Look Up Selected Text In Wikipedia
 			</a>
-		<div id="editor" contenteditable>
+		<div id="editor">
 				Click to edit
 		</div>
 </body>
