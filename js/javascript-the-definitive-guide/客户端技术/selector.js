@@ -89,6 +89,7 @@ function reverse(n){
 	}
 })
 
+//还定义了一些可移植的HTML插入函数，它们的名字比insertAdjacentHTML更符合逻辑
 var Insert = (function()}{
 	if(document.createElement("div").inserAdjacentHTML){
 		return{
