@@ -43,3 +43,20 @@ function LCS(arr1,arr2){
 	}
 	return lcs.reverse();
 }
+
+function editDistance(a,b){
+	for(var i=0;i<=a.length;i++){
+		dp[i] = [];
+		
+		for(var j=0;j<=b.length;j++){
+			dp[i][j] = 0;
+			
+		}
+	}
+	var sourceLen = a.length;
+	var targetLen = b.length;
+	var i,j;
+	for(i=0;i<=sourceLen;i++){
+		dp[i][0] = i;
+	}
+}
