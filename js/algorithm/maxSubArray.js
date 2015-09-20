@@ -85,3 +85,32 @@ function maxSubArrayAnalysis(arr){
 	return max;
 	//console.log(p);
 }
+
+//求最接近0的子数组
+//O(n)
+function minSubArrayAnalysis(arr){
+	var p = [],m=[];
+	p[0] = arr[0];
+	for(var i=1;i<arr.length;i++){
+		p[i] = p[i-1]+arr[i];
+	}//count sum i;
+	p.sort(function(a,b){
+		return a - b;
+	});//sort sum i;
+	var min1 = abs(p[1]-p[0]);
+	var min2 = abs(p[0]);
+	for(var i=1;i<p.length-1;i++){
+		var reduce = abs(p[i+1]-p[i]);
+		var sumMin = abs(p[i]);
+		if(reduce < min1)
+			min1 = reduce;
+		if(sumMin < min2)
+			min2 = sumMin;
+	}
+	return Math.min(min1,min2);
+	
+}
+
+function abs(a){
+	return a>=0?a:-a;
+}

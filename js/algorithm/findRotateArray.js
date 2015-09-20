@@ -21,6 +21,22 @@ function findRotateArray(arr,n){
 	return arr.reverse();
 }
 
+function findRotateArrayMin(arr){
+	var low = 0;
+	var high = arr.length-1;
+	
+	while(low < high){
+		if(arr[low] < arr[high])
+			return arr[low];
+		var mid = Math.floor((low+high)/2);
+		if(arr[low] < arr[mid])
+			low = mid+1;
+		else if(arr[low] > arr[mid])
+			high = mid;
+	}
+	return arr[low];
+}
+
 function changeArr(arr){
 	var i = 0;
 	var j = arr.length-1;
