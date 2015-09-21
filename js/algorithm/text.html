@@ -9,32 +9,12 @@
 	<script src="permutation.js"></script>
 	<script src="kmp.js"></script>
 	<script src = "manacher.js"></script>
+	<script src = "arrayAlg.js"></script>
+	<script src = "threeColor.js"></script>
+
 	<script>
-		var arr = [];
-		for(var i=0;i<1000;i++){
-			arr.push(i);
-		}
 		
-		var start = new Date();
-		//var maxSum = maxSubArray(arr);
-		console.log(maxSum);
-		var end = new Date();
-		console.log(end - start);
-		start = new Date();
-		var maxSum = maxSumArrayHalf(arr,0,arr.length-1);
-		console.log(maxSum);
-		end = new Date();
-		console.log(end - start);
-		start = new Date();
-		var maxSum = maxSubArrayAnalysis(arr);
-		console.log(maxSum);
-		end = new Date();
-		console.log(end - start);
-		console.log(minSubArrayAnalysis([4,-10,5,-2,7]));
-		LCS(['a','b','c','b','d','a','b'],['b','d','c','a','b','a']);
-		mainConsole();
-		consoleLog();
-		manacherTest();
+		threeColorMain();
 	</script>
 </head>
 <body>
