@@ -22,10 +22,20 @@ function manacher(str){
 			id = i;
 		}
 	}
-	console.log(nstr);
-	console.log(Math.max.apply(Math,p)-1);
+	var maxLength = 0;
+	var maxIndex = 0;
+	for(var i=0;i<nstr.length;i++){
+		if(p[i] > maxLength){
+			maxLength = p[i];
+			maxIndex = i;
+		}
+	}
+	var rstr = nstr.substring(maxIndex-maxLength+1,maxIndex+maxLength);
+	rstr = rstr.replace(/#/g,'');
+	console.log(rstr);
+	
 }
 
 function manacherTest(){
-	manacher('acbcacda');
+	manacher('acbbcacda');
 }
