@@ -14,6 +14,7 @@ function caculateNext(arr){
 		}else {
 			k = next[k]
 		}
+		console.log(k+" "+j);
 	}
 	return next;
 }
