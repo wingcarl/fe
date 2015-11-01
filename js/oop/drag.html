@@ -41,14 +41,14 @@
 				var ev = ev || window.event;
 				This.fnDown(ev);
 
-				toDown();
+				This.settings.toDown();
 				document.onmousemove = function(ev){
 					var ev = ev || window.event;
 					This.fnMove(ev);
 				}
 				document.onmouseup = function(){
 					This.fnUp();
-					toUp();
+					This.settings.toUp();
 				};
 				return false;
 			};
