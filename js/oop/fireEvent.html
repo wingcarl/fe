@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{ margin:0; padding:0;}
+		.login{ background:white; border:1px #000 solid; position:absolute; left:0; top:0;  z-index:2;}
+		.title{ height:30px; background:gray; color:white;}
+		.title .close{ float:right;}
+		#mark{ background:black; fitler:alpha(opacity=50); opacity:0.5; position:absolute; left:0; top:0; z-index:1;}
+	</style>
+	<script>
+		window.onload = function(){	
+			var div1 = document.getElementById("div1");
+			var span1 = document.getElementById("span1");
+			bindEvent(div1,"click",function(){
+				alert('1');
+			});
+			bindEvent(div1,"click",function(){
+				alert('2');
+			});
+			bindEvent(span1,"show",function(){
+				alert('3');
+			});
+			bindEvent(span1,"show",function(){
+				alert('4');
+			});
+			fireEvent(span1,'show');
+				
+		};
+	
+		function bindEvent(obj,events,fn){
+			obj.listeners = obj.listeners || {};
+			obj.listeners[events] = obj.listeners[events] || [];
+			obj.listeners[events].push(fn);
+			if(obj.addEventListener){
+				obj.addEventListener(events,fn,false);
+			}else{
+				attachEvent('on'+events,fn);
+			}
+		}	
+		function fireEvent(obj,events){
+			for(var i=0;i<obj.listeners[events].length;i++){
+				obj.listeners[events][i]();
+			}
+		}
+	</script>
+		
+</head>
+<body>
+
+	<div id="div1">123</div>
+	<span id="span1" >345</span>
+</body>
+</html>
