@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1、考虑标签语义化，使用合适的标签
+			2、标签特性的转换
+			3、小竖线使用哪种方式进行编码（图片、边框、背景颜色、字符...）
+			4、文字的行高设置
+			5、标签默认样式的处理(reset css)
+		-->
+		<style>
+			h3{margin:0;}
+			ul,ol{
+				list-style:none;
+				margin:0;
+				padding:0;
+			}
+			img{vertical-align:middle;border:none;}
+
+			.container{width:288px;height:707px;background-color:#f7f7f7;margin:0 auto;}
+			.container-inside{width:258px;height:603px;background-color:#fff;margin:0 auto;border:1px solid #e8e8e8;}
+			.box-item1{width:244px;height:141px;border-bottom:1px solid #e8e8e8;padding-left:14px;padding-top:9px;}
+			.header{height:38px;}
+			.logo{width:90px;height:24px;background:url(image/logo.gif);margin-left:14px;display:inline-block;}
+			.logo2{width:97px;height:18px;background: url(image/like_shop.gif);display:inline-block;margin-left:9px;vertical-align: top}
+			.box-item1 h3{font-size:14px;height:30px;line-height:30px;}
+			.box-item1 ul{font-size:12px;height:14px;line-height:14px;}
+			.box-item1 ul li{height:14px;float:left; color:#6c6c6c;padding:2px 7px 0 10px;border-right:1px solid #eaeaea;}
+			.box-item1 ul .first{padding-left:0;}
+			.box-item1 ul .last{border-right:none;}
+			.box-item1 ol{height:70px; margin-top:12px;}
+			.box-item1 ol li{width:70px;height:70px;float:left;margin-right:10px;}
+			.box-item1 ol .last{margin-right:0;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="logo"></div>
+				<div class="logo2"></div>
+			</div>
+			
+			<div class="container-inside">
+				<div class="box-item1">
+					<h3>素色空间</h3>
+					<ul>
+						<li class="first">是正品</li>
+						<li>漂亮</li>
+						<li>很漂亮</li>
+						<li class="last">双鱼座</li>
+					</ul>
+					<ol>
+						<li><img src="image/ding.gif"/></li>
+						<li><img src="image/ring.gif"/></li>
+						<li class="last"><img src="image/girl.gif"/></li>
+					</ol>
+				</div>
+				<div class="box-item1">
+					<h3>哆哆妙HOUSE</h3>
+					<ul>
+						<li class="first">正品</li>
+						<li>很舒服</li>
+						<li>萌系</li>
+						<li class="last">韩版</li>
+					</ul>
+					<ol>
+						<li><img src="image/ding.gif"/></li>
+						<li><img src="image/ring.gif"/></li>
+						<li class="last"><img src="image/girl.gif"/></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
