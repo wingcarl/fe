@@ -45,10 +45,17 @@
 		.item-2 dl{margin-top:13px;width:80px;height:92px;}
 		.item-2 dl dd {width:80px;margin:0 auto ;text-align:center;font-size:12px;line-height:32px;height:32px;}
 		.clear{clear:both;height:0px;}
-		/*.item-3 ul{margin-left:8px;}
-		*/
+		
 		.item-3 ul{margin-left:14px;}
 		.item-3 ul li{float:left;padding:0 6px 0 6px;border-right:1px solid #cccccc;font-size:12px;}
+		.item-2-1{width:167px;height:90px;border:1px solid #eeeeee;margin:0 auto;margin-top:13px;}
+		.item-2-1 img{width:32px;height:32px;margin:0;float:left;}
+		.item-2-1 .intro_title{font-size:14px;line-height:24px;height:24px;}
+		.item-2-1 .intro_price{font-size:12px;line-height:12px;height:12px;color:#6c6c6c;margin-left:-20px;}
+		.item-2-1 dt{width:55px;float:left;}
+		.item-2-1 dd{width:70px;float:left;margin-top:0}
+		.item-2-1 .house{width:70px;height: 70px;margin-top:-10px;}
+		.item-3-1{margin-top:16px;}
 	</style>
 </head>
 <body>
@@ -149,16 +156,16 @@
 					</div>
 				</div>
 				<div class="item-2">
-					<ul>
-						<li>
-							<img src="img/cars.gif"/>
-							<div class="item-2-intro-first">特价二手车</div>
-						</li>
-						<li class="last">
-							<img src="img/ring.gif"/>
-							<div id="ring" class="item-2-intro-last">玉石捡漏</div>
-						</li>
-					</ul>
+				<dl class="item-2-left">
+							<dt><img src="img/cars.gif"/></dt>
+							<dd>特价二手车</dd>
+						</dl>
+						<dl class="item-2-right">
+							<dt><img src="img/ring.gif"/></dt>
+							<dd>玉石捡漏</dd>
+						</dl>
+					<div class="clear"></div>
+					
 				</div>
 				<div class="item-3">
 					<ul>
@@ -189,16 +196,16 @@
 					</div>
 				</div>
 				<div class="item-2">
-					<ul>
-						<li>
-							<img src="img/children.gif"/>
-							<div class="item-2-intro-first">童装冬上新</div>
-						</li>
-						<li class="last">
-							<img src="img/woman.gif"/>
-							<div class="item-2-intro-last">这样穿显瘦</div>
-						</li>
-					</ul>
+						<dl class="item-2-left">
+							<dt><img src="img/children.gif"/></dt>
+							<dd>童装冬上新</dd>
+						</dl>
+						<dl class="item-2-right">
+							<dt><img src="img/woman.gif"/></dt>
+							<dd>这样穿显瘦</dd>
+						</dl>
+				<div class="clear"></div>
+					
 				</div>
 				<div class="item-3">
 					<ul>
@@ -229,16 +236,16 @@
 					</div>
 				</div>
 				<div class="item-2">
-					<ul>
-						<li>
-							<img src="img/girl1.gif"/>
-							<div class="item-2-intro-first">羊羔毛外套</div>
-						</li>
-						<li class="last">
-							<img src="img/girl2.gif"/>
-							<div class="item-2-intro-last">毛衣+裙子</div>
-						</li>
-					</ul>
+				    	<dl class="item-2-left">
+							<dt><img src="img/girl1.gif"/></dt>
+							<dd>羊羔毛外套</dd>
+						</dl>
+						<dl class="item-2-right">
+							<dt><img src="img/girl2.gif"/></dt>
+							<dd>毛衣+裙子</dd>
+						</dl>
+				<div class="clear"></div>
+	
 				</div>
 				<div class="item-3">
 					<ul>
@@ -255,40 +262,41 @@
 			</div>
 			<div class="item-box">
 				<ul>
-					<li><h3>众筹</h3></li>
+					<li><h3>阿里旅行</h3></li>
 					<li><img src="img/qr-code.gif"/></li>
 				</ul>
 				
 				<div class="item-1">
-					<img src="img/无人机.gif"/>
+					<img src="img/bluesky.gif"/>
 					<div class="intro">
 						<ul>
-							<li class="intro-first">迷你无人机-小到不可思议</li>
-							<li class="intro-last">年轻人的新玩具</li>
+							<li class="intro-first">7999蓝色美人蕉岛</li>
+							<li class="intro-last">一价全包水屋自由行</li>
 						</ul>
 					</div>
 				</div>
-				<div class="item-2">
-					<ul>
-						<li>
-							<img src="img/bike.gif"/>
-							<div class="item-2-intro-first">智能折叠车</div>
-						</li>
-						<li class="last">
-							<img src="img/pludge.gif"/>
-							<div class="item-2-intro-last">防水智能插座</div>
-						</li>
-					</ul>
+				<div class="item-2-1">
+					<img src="img/hot.gif"/>
+					<dl>
+						<dt>
+							<div class="intro_title">巴厘岛</div>
+							<div class="intro_price">5天4晚2499</div>
+						</dt>
+						
+							
+						
+					</dl>
+					<img class="house" src="img/house1.gif"/>
 				</div>
-				<div class="item-3">
+				<div class="item-3 item-3-1">
 					<ul>
-						<li>科技控</li>
-						<li>创意设计</li>
-						<li class="item-3-last">最新周边</li>
+						<li>奢华迪拜</li>
+						<li>甜蜜巴厘</li>
+						<li class="item-3-last">寻味广东</li>
 					</ul>
 					<ul class="last-line">
-						<li id="highlight"><label class="kuo">[</label><label id="star"> 明星同款 </label><label class="kuo">]</label></li>
-						<li>同茬冬笋</li>
+						<li id="highlight"><label class="kuo">[</label><label id="star"> 旅游特卖 </label><label class="kuo">]</label></li>
+						<li>蜻蜓科</li>
 					</ul>
 				</div>
 
