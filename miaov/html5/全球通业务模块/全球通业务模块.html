@@ -5,22 +5,29 @@
 	<title>全球通业务模块</title>
 	<style>
 		body{margin:0;}
-		.container{width:1000px;height:689px;background:url(img/bg.png);margin:0 auto;}
-		.itembox{width:760px;height:360px;margin:0 auto; position:relative;top:50%;transform: translateY(-50%);background: #fff}
-		.pinkbox{width:660px;height:297px;margin:0 auto;border-top:2px solid #e7788d;position:relative;top:50%;transform: translateY(-50%);}
+		.container{width:760px;height:360px;background:url(img/bg.png)  no-repeat;margin: 0 auto;
+			 	padding: 165px 120px;}
+		.itembox{width:760px;height:360px;margin:0 auto; }
+		.pinkbox{width:660px;height:297px;margin:0 auto;background: #fff;padding: 32px 50px 30px 53px;}
+		.pinkbox-top{border-top:2px solid #e7788d;border-bottom:1px dashed #e5e5e5;height:196px;}
 		.title{height:22px;margin-top:12px;}
 		.title .logo{float:left;}
 		.title-digi{font-size:16px;line-height:22px;height:22px;color:#e7788d;vertical-align: center;margin-left:10px;float:left;}
 		 .item{
-			 	margin-top: 4px;
+			 	margin-top: 20px;
 			 	font-size: 14px;
 			 	font-family: "微软雅黑";
 			 }
-		ul,ol{
+		ul,ol,dl,dd,dt{
 				list-style:none;
 				margin:0;
 				padding:0;
 			}
+		a{
+			text-decoration: none;
+			color: #3a3a3a;
+
+		}
 		.imgn{
 				border: 1px solid #e5e5e5;
 				
@@ -32,12 +39,21 @@
 				text-align: center;
 				clear: left;
 			 }}
+		.pinkbox-bottom{margin-top:28px;height:80px;}
+		dl{margin-top:20px;clear:left;height:40px;text-align:center;}
+		.bottom-dl{margin-top:8px;}
+		dt,dd{float:left;font-size:14px;font-family: "微软雅黑";}
+		dt{width:100px;height:30px;background: #e7788d;text-align: center;line-height: 30px;margin-right: 18px}
+		dd{padding:0 8px;height:30px;line-height: 30px}
+		.more{padding-right:0;}
+		dt a{color:#fff;}
 	</style>
 </head>
 <body>
 	<div class=container>
 		<div class="itembox">
 			<div class="pinkbox">
+				<div class="pinkbox-top">
 				<div class="title">
 					<img class="logo" src="img/earth.gif"/>
 					<div class="title-digi">全球通业务+</div>
@@ -48,39 +64,59 @@
 						<span class="item-bq">信息管家</span>
 					</li>
 					<li  class="img1">
-						<a><img class="imgn" src="img/fd1-2.gif"/></a>
-						<span class="item-bq">信息管家</span>
+						<a><img class="imgn" src="img/fd1-3.gif"/></a>
+						<span class="item-bq">无限音乐专区</span>
 					</li>
 					<li  class="img1">
-						<a><img class="imgn" src="img/fd1-2.gif"/></a>
-						<span class="item-bq">信息管家</span>
+						<a><img class="imgn" src="img/fd1-4.gif"/></a>
+						<span class="item-bq">手机证券</span>
 					</li>
 					<li  class="img1">
-						<a><img class="imgn" src="img/fd1-2.gif"/></a>
-						<span class="item-bq">信息管家</span>
+						<a><img class="imgn" src="img/fd1-5.gif"/></a>
+						<span class="item-bq">飞信</span>
 					</li><li  class="img1 img2">
-						<a><img class="imgn" src="img/fd1-2.gif"/></a>
-						<span class="item-bq">信息管家</span>
+						<a><img class="imgn" src="img/fd1-6.gif"/></a>
+						<span class="item-bq">短信回执</span>
 					</li>
 				</ul>
-				<!--<div class="item">
-					<img class="product p1" src="img/izone.gif"/>
 				</div>
-				<div class="item">
-					<img class="product" src="img/music.gif"/>
+				<div class="pinkbox-bottom">
+					
+					<dl>
+						<dt><a href="#">基本业务</a></dt>
+						<dd><a href="#">国际漫游</a></dd>
+						<dd>|</dd>
+						<dd><a>国际长途</a></dd>
+						<dd>|</dd>
+						<dd><a>国内长途</a></dd>
+						<dd>|</dd>
+						<dd>国内漫游</dd>
+						<dd>|</dd>
 
-				</div>
-				<div class="item">
-				    <img class="product p3" src="img/telephone.gif"/>
-				</div>
-				<div class="item">
-				    <img class="product p3" src="img/plane.gif"/>
+						<dd>本地通话</dd>
+						<dd>|</dd>
 
+						<dd class="more">更多>></dd>
+
+					</dl>
+					<dl  class="bottom-dl">
+						<dt><a href="#">新业务</a></dt>
+						<dd><a href="#">手机阅读</a></dd>
+						<dd>|</dd>
+						<dd><a>手机支付</a></dd>
+						<dd>|</dd>
+						<dd><a>139邮箱</a></dd>
+						<dd>|</dd>
+						<dd><a>MO手机上网</a></dd>
+						<dd>|</dd>
+						<dd>视频会议</dd>
+						<dd>|</dd>
+
+
+						<dd class="more">更多>></dd>
+
+					</dl>
 				</div>
-				<div class="item fix-right">
-				    <img class="product p3" src="img/message.gif"/>
-				</div>-->
-				
 			</div>
 		</div>
 	</div>
