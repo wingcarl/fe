@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		.container{width:298px;height:218px;border:1px solid red;margin:0 auto;position: relative;}
+		.left-box{width:50px;height:208px;float:left;margin-top:4px;margin-left:2px;}
+		.left-box ul li{width:48px;height:26px;border:1px solid pink;margin-bottom:2px;font-size:12px;text-align: center;line-height:26px;cursor:pointer;}
+		.right-box{width:50px;height:208px;float:right;margin-right:2px;margin-top:4px;}
+		.right-box ul li{width:48px;height:26px;border:1px solid pink;margin-bottom:2px;font-size:12px;text-align: center;line-height:26px;cursor:pointer;}
+		.active{background-color: pink;color:white;}
+		#pic{width:188px;
+		height:210px;
+		position:absolute;top:4px;left:54px;}
+		#pic img{
+			width:188px;
+		height:210px;
+		}
+	</style>
+	<script>
+		var oBox=document.getElementById('box');
+		var ul=oBox.getElementsByTagName('ul');
+		var li=oBox.getElementsByTagName('li');
+		var num = 0;
+		var timer = null;
+		oBox.onmouseover=function(){
+				for(var i=0;i<li.length;i++){
+					if(li[i].className=='active'){
+						num=i;
+					}
+				}
+            	clearInterval(timer);
+            	fn1();
+
+			}
+
+	</script>
+</head>
+<body>
+	<div class="container" id="box">
+		<div class="left-box">
+			<ul>
+				<li class="active">连衣裙</li>
+				<li>雪纺</li>
+				<li>T恤</li>
+				<li>铅笔裙</li>
+				<li>婚纱</li>
+				<li>外套</li>
+				<li>连体裤</li>
+			</ul>
+		</div>
+		<div id="pic">
+			<img src="img/10.jpg" alt="">
+		</div>
+		<div class="right-box">
+			<ul>
+				<li>包包</li>
+				<li>凉鞋</li>
+				<li>单鞋</li>
+				<li>太阳镜</li>
+				<li>丝袜</li>
+				<li>帆布鞋</li>
+				<li>情侣装</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
