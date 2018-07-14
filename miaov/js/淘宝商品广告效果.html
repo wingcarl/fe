@@ -21,11 +21,56 @@
 		}
 	</style>
 	<script>
+	window.onload = function(){
 		var oBox=document.getElementById('box');
 		var ul=oBox.getElementsByTagName('ul');
 		var li=oBox.getElementsByTagName('li');
+		var pic = document.getElementById('pic');
+		var oImg=pic.getElementsByTagName('img')[0];
+		var arrUrl=['img/10.jpg','img/11.jpg','img/12.jpg','img/13.jpg','img/14.jpg','img/15.jpg','img/16.jpg','img/17.jpg','img/18.jpg','img/19.jpg','img/20.jpg','img/21.jpg','img/22.jpg','img/23.jpg'];
 		var num = 0;
 		var timer = null;
+		oImg.src = arrUrl[num];
+		function fn1(){
+			for(var i=0;i<li.length;i++){
+				li[i].index = i;
+				li[i].onmouseover = function(){
+					for(var i=0;i<li.length;i++){
+						li[i].className='';
+					}
+					this.className = 'active';
+					oImg.src = arrUrl[this.index];
+				}
+			}
+		}
+		//fn1();
+		
+		function auto(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				for(var i=0;i<li.length;i++){
+					li[i].className = '';
+				}
+				oImg.src = arrUrl[num];
+				li[num].className = 'active';
+				if(num>=0 && num<arrUrl.length/2){
+					num++;
+					if(num >= arrUrl.length/2){
+						num = arrUrl.length-1;
+					}
+				}
+				else if(num >= arrUrl.length/2 && num<arrUrl.length){
+					num--;
+					if(num < arrUrl.length/2){
+						num = 0;
+					}
+				}
+				if(num < 0 || num>arrUrl.length-1){
+					num = 0;
+				}
+			},1000);
+		}
+		auto()
 		oBox.onmouseover=function(){
 				for(var i=0;i<li.length;i++){
 					if(li[i].className=='active'){
@@ -36,11 +81,16 @@
             	fn1();
 
 			}
+		oBox.onmouseout = function(){
+			auto();
+		}
+	}
+	    
 
 	</script>
 </head>
 <body>
-	<div class="container" id="box">
+	<div id="box" class="container">
 		<div class="left-box">
 			<ul>
 				<li class="active">连衣裙</li>

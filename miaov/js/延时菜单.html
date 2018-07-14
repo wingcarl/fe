@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延时菜单</title>
+	<style>
+	*{margin:0;padding:0;}
+	li{list-style:none;}
+	.gradient{
+		background:-moz-linear-gradient(top,#6699cc,#336699);
+		background:-ms-linear-gradient(top,#6699cc,#f8f8f8);
+		background:-webkit-linear-gradient(top,#6699cc,#f8f8f8);
+		background:linear-gradient(top,#6699cc,#f8f8f8);
+		-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFF,endColorStr=#f8f8f8");
+		+background: #336699
+	}
+		#menu ul{width:520px;height:38px;margin:0 auto;border-radius: 6px;}
+		#menu ul li{float:left;width:70px;height:25px;font-size:14px; font-family:"微软雅黑"; color:white;text-align: center;vertical-align: center;line-height: 25px;margin-top:6px;padding:2px;margin-left:5px;}
+		.active{border-radius: 6px;background:-moz-linear-gradient(top,#99cccc,#6699cc);
+		background:-ms-linear-gradient(top,#99cccc,#6699cc);
+		background:-webkit-linear-gradient(top,#99cccc,#6699cc);
+		background:linear-gradient(top,#99cccc,#6699cc);
+		-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFF,endColorStr=#f8f8f8");
+		+background: #336699}
+	</style>
+</head>
+<body>
+	<div id="menu">
+		<ul class='gradient'>
+			<li class='active'>首页</li>
+			<li>关于我们</li>
+			<li>作品</li>
+			<li>博客</li>
+			<li>>>更多</li>
+		</ul>
+	</div>
+</body>
+</html>

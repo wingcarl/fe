@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>WeUI</title>
+        <!-- 引入 WeUI -->
+        <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> 
+        <script src=" http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <script src="tsg_7.json"></script>				
+      
+
+        <style>
+			.br{border:1px solid black;text-align:center;}
+        </style>
+        <script>
+        	
+        $(document).ready(function(){
+
+        	
+
+	  
+		Date.prototype.Format = function (fmt) { //author: meizz 
+		    var o = {
+		        "M+": this.getMonth() + 1, //月份 
+		        "d+": this.getDate(), //日 
+		        "H+": this.getHours(), //小时 
+		        "m+": this.getMinutes(), //分 
+		        "s+": this.getSeconds(), //秒 
+		        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+		        "S": this.getMilliseconds() //毫秒 
+		    };
+		    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    for (var k in o)
+		    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		    return fmt;
+		}
+
+		
+         var now = new Date().Format("yyyy-MM-dd");
+		 var tide = [];
+	     for(var i=0;i<td.length;i++){
+
+	        	if(td[i].time.substr(0, 10) == now){
+	        		tide.push(td[i].high);
+	        	}
+	     } 
+	     var ctx = document.getElementById("myChart").getContext('2d');
+        var config = {
+			    type: 'line',
+			    data: {
+				labels: [ '0', '1', '2', '3','4','5','6','7','9','10','11','12','13','14','15','16','17','18','19','20','21', '22', '23'],
+				datasets: [{
+					label: '潮高',
+					backgroundColor: 'blue',
+					borderColor: 'blue',
+					data: tide,
+					fill: false
+				}]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: '潮汐24h分布表'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Month'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Value'
+						}
+					}]
+				}
+			}}
+		var myChart = new Chart(ctx, config);    
+        var index = [];
+        $('#input-date').val(now);
+        for(var i=0;i<bd.length;i++){
+        	if(bd[i].date.substr(0, 10) == now){
+        			index.push(i);
+        	}
+        }
+       
+        for(var i=1;i<=index.length;i++){
+        		var k = index[i-1];
+        		var t = bd[k].time.substr(0,2)+":"+bd[k].time.substr(2,4);
+        		$('#time'+i).html(t);
+        		$('#height'+i).html(bd[k].high);
+        			
+        		
+        }
+        $('#submit-date').click(function(){
+        	var now = $('#input-date').val();
+        	var tide = [];
+		    for(var i=0;i<td.length;i++){
+		        	if(td[i].time.substr(0, 10) == now){
+		        		tide.push(td[i].high);
+		        	}
+		     } 
+	        config.data.datasets.forEach(function(dataset) {
+				dataset.data = tide
+			});
+	        myChart.update();
+        	index = []
+        	for(var i=0;i<bd.length;i++){
+        	if(bd[i].date.substr(0, 10) == now){
+        			index.push(i);
+        	}
+       		}
+       		for(var i=1;i<=index.length;i++){
+        		var k = index[i-1];
+        		var t = bd[k].time.substr(0,2)+":"+bd[k].time.substr(2,4);
+        		$('#time'+i).html(t);
+        		$('#height'+i).html(bd[k].high);	
+        	}
+        });
+       
+
+		});
+
+        </script>
+    </head>
+    <body>
+    
+
+
+<div class="weui-cells weui-cells_form">
+    
+    
+    
+    
+</div>
+
+
+<div class="weui-cells__title">潮汐情况</div>
+<div class="weui-cells">
+
+    <div class="weui-cell weui-cell_select weui-cell_select-after">
+        <div class="weui-cell__hd">
+            <label for="" class="weui-label">选择港口</label>
+        </div>
+        <div class="weui-cell__bd">
+            <select class="weui-select" name="select2">
+                <option value="1">江阴</option>
+                <option value="2">天生港</option>
+            </select>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="" class="weui-label">选择日期</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" id="input-date" type="date" value=""/>
+        </div>
+    </div>
+ </div>  
+
+
+<div class="weui-btn-area">
+    <a class="weui-btn weui-btn_primary" href="javascript:" id="submit-date">查询</a>
+</div>
+<div class="weui-flex br">
+    <div class="weui-flex__item br"><div class="placeholder"><strong>潮时(Hrs)</strong></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="time1"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="time2"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="time3"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="time4"></div></div>
+
+</div>
+<div class="weui-flex">
+    <div class="weui-flex__item br"><div class="placeholder"><strong>潮高(cm)</strong></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="height1"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="height2"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="height3"></div></div>
+    <div class="weui-flex__item br"><div class="placeholder" id="height4"></div></div>
+
+</div>
+<br>
+<canvas id="myChart" width="400" height="400"></canvas>
+    </body>
+</html>
